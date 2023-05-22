@@ -1,0 +1,50 @@
+@import './_variables';
+@import './_functions';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+.main-container {
+  @include flexTopCenter(column);
+  margin-top: 70px;
+}
+
+@media only screen and (width < 350px) {
+  p {
+    width: 15ch;
+    text-overflow: '';
+  }
+}
+@media only screen and (width < 450px) {
+  .tasks-container {
+    @include flexColumnTopCenter(column);
+    margin-inline: 15px;
+    gap: 25px;
+    .task {
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid $black;
+      @include flexCenterBetween();
+      padding: 10px;
+    }
+    .task_content {
+      list-style: none;
+      text-decoration: none;
+      font-size: 18px;
+      color: $black;
+      margin: 0;
+      p {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@mixin flexTopCenter($direction) {
+  display: flex;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColumnCenter($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flexColumnTopCenter($direction) {
+  display: flex;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flexCenterBetween() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
