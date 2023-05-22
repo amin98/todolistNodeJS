@@ -168,9 +168,8 @@
   border-radius: 100%;
   border-color: #273049;
 }
-
 @media only screen and (width < 450px) {
-  .newtask_form_container {
+  .newtask-container .newtask_form_container {
     margin-inline: 20px;
     margin-block: 10px;
     display: flex;
@@ -178,8 +177,7 @@
     flex-direction: column;
     gap: 20px;
   }
-  .newtask_form_container .save_button {
-    width: 100%;
+  .newtask-container .newtask_form_container .primary_button {
     border: none;
     background: #273049;
     color: #fff;
@@ -187,33 +185,34 @@
     padding: 5px 5px 5px 5px;
     border-radius: 5px;
     margin-top: 10px;
+    text-decoration: none;
   }
-  .newtask_form_container .save_button:hover {
+  .newtask-container .newtask_form_container .primary_button:hover {
     background: #22283d;
     cursor: pointer;
   }
-  .newtask_form_container .save_button:focus {
+  .newtask-container .newtask_form_container .primary_button:focus {
     background-color: #131726;
   }
-  .newtask_form_container .newtask_field {
+  .newtask-container .newtask_field {
     display: flex;
     flex-direction: column;
   }
-  .newtask_form_container .newtask_field label {
+  .newtask-container .newtask_field label {
     font-size: 1.5rem;
     margin-bottom: 5px;
   }
-  .newtask_form_container .newtask_field input[type=text] {
+  .newtask-container .newtask_field input[type=text] {
     border: 1px solid black;
     font-size: 1.3rem;
     border-radius: 5px;
     padding-block: 5px;
     box-sizing: border-box;
   }
-  .newtask_form_container .newtask_field input[type=text]:focus {
+  .newtask-container .newtask_field input[type=text]:focus {
     outline: none;
   }
-  .newtask_form_container .newtask_field textarea {
+  .newtask-container .newtask_field textarea {
     width: 100%;
     height: 150px;
     box-sizing: border-box;
@@ -223,10 +222,11 @@
     padding-block: 5px;
     resize: none;
   }
-  .newtask_form_container .newtask_field textarea:focus {
+  .newtask-container .newtask_field textarea:focus {
     outline: none;
   }
 }
+
 .taskdetails-container {
   display: flex;
   justify-content: center;
@@ -237,15 +237,21 @@
   margin-top: 0;
   font-weight: 500;
 }
+.taskdetails-container hr {
+  margin-inline: 10px;
+  border-radius: 100%;
+  border-color: #273049;
+}
 .taskdetails-container .taskdetails_content {
   background-color: #fff;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
+  box-shadow: 1px 1px 5px rgba(106, 106, 106, 0.221);
 }
 .taskdetails-container .taskdetails_content .taskdetails_description {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-block: 20px;
 }
 .taskdetails-container .taskdetails_content .taskdetails_description h2 {
   font-weight: 500;
@@ -255,11 +261,51 @@
   margin: 0;
   padding: 0;
 }
+.taskdetails-container .taskdetails_content .taskdetails_buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.taskdetails-container .taskdetails_content form .delete_button {
+  border: none;
+  background: rgb(205, 35, 52);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.taskdetails-container .taskdetails_content form .delete_button:hover {
+  background: rgb(175, 31, 46);
+  cursor: pointer;
+}
+.taskdetails-container .taskdetails_content form .delete_button:focus {
+  background-color: rgb(152, 27, 40);
+}
 .taskdetails-container .taskdetails_content h3 {
   font-weight: 400;
+  margin-bottom: 20px;
 }
 .taskdetails-container .taskdetails_content h3 span {
   font-weight: 600;
+}
+.taskdetails-container .taskdetails_content .edit_button {
+  border: none;
+  background: #244180;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.taskdetails-container .taskdetails_content .edit_button:hover {
+  background: #1c3467;
+  cursor: pointer;
+}
+.taskdetails-container .taskdetails_content .edit_button:focus {
+  background-color: #172c57;
 }
 
 body {

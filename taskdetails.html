@@ -33,6 +33,7 @@
     <div class="taskdetails-container">
         <div class="taskdetails_content">
             <h1>Task Name</h1>
+            <hr>
             <div class="taskdetails_description">
                 <h2>Descsription</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga minus ipsa consequuntur fugiat ad quas
@@ -41,7 +42,16 @@
             </div>
             <h3>Priority: <span>1</span></h3>
             <h3>Deadline Date: <span>20-02-2023</span> </h3>
-            <a href="">Edit</a>
+            <div class="taskdetails_buttons">
+                <a href="tasks/edit/" class="edit_button">Edit</a>
+
+                <form action="/tasks/<%=  %>?_method=DELETE" method="post">
+                    <button type="submit" class="delete_button">
+                        Delete
+                    </button>
+                </form>
+            </div>
+
         </div>
 </body>
 
