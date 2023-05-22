@@ -1,7 +1,7 @@
 const toggleButton = document.getElementsByClassName('toggle-button')[0];
 const navbarLinks = document.getElementById('navbar-links');
 
-const checkbox = document.getElementsByClassName('checkbox')[0];
+var checkbox = document.getElementsByClassName('checkbox');
 
 var checkedStatus = false;
 var task = {
@@ -12,14 +12,16 @@ var task = {
   status: checkedStatus,
 };
 
-checkbox.addEventListener('change', (event) => {
-  if (event.currentTarget.checked) {
-    task.status = true;
+for (var i = 0; i < checkbox.length; i++) {
+  checkbox[i].addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+      task.status = true;
 
-    console.log(task.status);
-  } else {
-    task.status = !task.status;
+      console.log(task.status);
+    } else {
+      task.status = !task.status;
 
-    console.log(task.status);
-  }
-});
+      console.log(task.status);
+    }
+  });
+}
