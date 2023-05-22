@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-header-container">
+            <a class="navbar-header" href="index.html">
+                Task List
+            </a>
+        </div>
+        <a href="#" class="toggle-button">
+            <img src="img/menu.png" alt="Menu">
+        </a>
+        <div id="navbar-links">
+            <ul>
+                <li>
+                    <a id="index-button" class="nav-text">Home</a>
+                </li>
+                <li>
+                    <a id="about-button" class="nav-text">About</a>
+            </ul>
+        </div>
+    </nav>
+    <div class="newtask-container">
+        <h1>Create a Task</h1>
+        <hr>
+        <form class="newtask_form_container" action="newtask.html" method="post">
+            <div class="newtask_field">
+                <label for="title">Title</label>
+                <input required value="" type="text" name="task_name" id="task_name">
+            </div>
+            <div class="newtask_field">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
+            </div>
+            <div class="newtask_field">
+                <label for="priority">Priority</label>
+                <select name="priority" id="priority">
+                    <option value="1">1 (High)</option>
+                    <option value="2">2 (Medium)</option>
+                    <option value="3">3 (Low)</option>
+                </select>
+            </div>
+            <div class="newtask_field">
+                <label for="deadline_date">Deadline Date</label>
+                <input required value="" type="date" name="deadline_date" id="deadline_date">
+            </div>
+            <button class="save_button" type="submit">Save</button>
+        </form>
+    </div>
+</body>
+
+
+</html>
+<script src="script.js"></script>
+<script src="navigation.js"></script>

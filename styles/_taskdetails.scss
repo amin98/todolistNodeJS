@@ -1,0 +1,32 @@
+.taskdetails-container {
+  @include flexTopCenter(column);
+  margin: 10px;
+  h1 {
+    margin-top: 0;
+    font-weight: 500;
+  }
+  .taskdetails_content {
+    background-color: $white;
+    border-radius: 5px;
+    padding: 10px;
+    .taskdetails_description {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      h2 {
+        font-weight: 500;
+        margin: 0px 0px 5px 0px;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    h3 {
+      font-weight: 400;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
