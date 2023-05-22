@@ -1,1 +1,110 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 70px;
+}
+
+@media only screen and (width < 350px) {
+  p {
+    width: 15ch;
+    text-overflow: "";
+  }
+}
+@media only screen and (width < 450px) {
+  .tasks-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: 15px;
+    gap: 25px;
+  }
+  .tasks-container .task {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #0d1018;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    /* Hide the browser's default checkbox */
+    /* Create a custom checkbox */
+    /* On mouse-over, add a grey background color */
+    /* When the checkbox is checked, add a blue background */
+    /* Create the checkmark/indicator (hidden when not checked) */
+    /* Show the checkmark when checked */
+    /* Style the checkmark/indicator */
+  }
+  .tasks-container .task .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  .tasks-container .task .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .tasks-container .task .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  .tasks-container .task .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  .tasks-container .task .container input:checked ~ .checkmark {
+    background-color: #2196f3;
+  }
+  .tasks-container .task .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .tasks-container .task .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  .tasks-container .task .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  .tasks-container .task_content {
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+    color: #0d1018;
+    margin: 0;
+  }
+  .tasks-container .task_content p {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}/*# sourceMappingURL=style.css.map */
