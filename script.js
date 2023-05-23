@@ -1,7 +1,10 @@
-
 var checkbox = document.getElementsByClassName('checkbox');
+var taskParagraph = document.getElementsByClassName('task_content_paragraph');
 
 var checkedStatus = false;
+var taskText = Object.keys(taskParagraph);
+var check = Object.keys(checkbox);
+
 var task = {
   name: 'Stretching after workout',
   description:
@@ -10,16 +13,24 @@ var task = {
   status: checkedStatus,
 };
 
-for (var i = 0; i < checkbox.length; i++) {
-  checkbox[i].addEventListener('change', (event) => {
+// console.log(taskParagraph[0]);
+
+check.forEach(function (key) {
+  // console.log(taskText[key]);
+  // console.log(check[key]);
+
+  checkbox[key].addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
       task.status = true;
+
+      taskParagraph[key].style.textDecoration = 'line-through';
 
       console.log(task.status);
     } else {
       task.status = !task.status;
+      taskParagraph[key].style.textDecoration = 'none';
 
       console.log(task.status);
     }
   });
-}
+});
