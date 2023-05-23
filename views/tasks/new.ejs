@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <title>To Do List</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-header-container">
+            <a class="navbar-header" href="index.html">
+                Task List
+            </a>
+        </div>
+        <a href="#" class="toggle-button">
+            <img src="/img/menu.png" alt="Menu">
+        </a>
+        <div id="navbar-links">
+            <ul>
+                <li>
+                    <a id="index-button" class="nav-text">Home</a>
+                </li>
+                <li>
+                    <a id="about-button" class="nav-text">About</a>
+            </ul>
+        </div>
+    </nav>
+    <div class="newtask-container">
+        <h1>Create a Task</h1>
+        <hr>
+        <form class="newtask_form_container" action="/tasks" method="post">
+            <%- include('_form_fields') %>
+
+        </form>
+    </div>
+</body>
+
+
+</html>
+<script src="/script.js"></script>
+<script src="/navigation.js"></script>
