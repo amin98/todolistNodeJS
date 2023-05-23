@@ -15,21 +15,16 @@ var task = {
 
 // console.log(taskParagraph[0]);
 
+//Loop through paragraphs of tasks and checkboxes in order to add style changes to specific element using the keys
 check.forEach(function (key) {
-  // console.log(taskText[key]);
-  // console.log(check[key]);
-
   checkbox[key].addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
       task.status = true;
-
       taskParagraph[key].style.textDecoration = 'line-through';
-
       console.log(task.status);
     } else {
       task.status = !task.status;
       taskParagraph[key].style.textDecoration = 'none';
-
       console.log(task.status);
     }
   });

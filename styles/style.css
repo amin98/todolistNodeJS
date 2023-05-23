@@ -227,87 +227,88 @@
   }
 }
 
-.taskdetails-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 10px;
+@media only screen and (width < 900px) {
+  .taskdetails-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .taskdetails-container h1 {
+    margin-top: 0;
+    font-weight: 500;
+  }
+  .taskdetails-container hr {
+    margin-inline: 10px;
+    border-radius: 100%;
+    border-color: #273049;
+  }
+  .taskdetails-container .taskdetails_content {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px 10px 20px 10px;
+    box-shadow: 1px 1px 5px rgba(106, 106, 106, 0.221);
+  }
+  .taskdetails-container .taskdetails_content .taskdetails_description {
+    display: flex;
+    flex-direction: column;
+    margin-block: 20px;
+  }
+  .taskdetails-container .taskdetails_content .taskdetails_description h2 {
+    font-weight: 500;
+    margin: 0px 0px 5px 0px;
+  }
+  .taskdetails-container .taskdetails_content .taskdetails_description p {
+    margin: 0;
+    padding: 0;
+  }
+  .taskdetails-container .taskdetails_content .taskdetails_buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .taskdetails-container .taskdetails_content form .delete_button {
+    border: none;
+    background: rgb(205, 35, 52);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  .taskdetails-container .taskdetails_content form .delete_button:hover {
+    background: rgb(175, 31, 46);
+    cursor: pointer;
+  }
+  .taskdetails-container .taskdetails_content form .delete_button:focus {
+    background-color: rgb(152, 27, 40);
+  }
+  .taskdetails-container .taskdetails_content h3 {
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .taskdetails-container .taskdetails_content h3 span {
+    font-weight: 600;
+  }
+  .taskdetails-container .taskdetails_content .edit_button {
+    border: none;
+    background: #244180;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  .taskdetails-container .taskdetails_content .edit_button:hover {
+    background: #1c3467;
+    cursor: pointer;
+  }
+  .taskdetails-container .taskdetails_content .edit_button:focus {
+    background-color: #172c57;
+  }
 }
-.taskdetails-container h1 {
-  margin-top: 0;
-  font-weight: 500;
-}
-.taskdetails-container hr {
-  margin-inline: 10px;
-  border-radius: 100%;
-  border-color: #273049;
-}
-.taskdetails-container .taskdetails_content {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px 10px 20px 10px;
-  box-shadow: 1px 1px 5px rgba(106, 106, 106, 0.221);
-}
-.taskdetails-container .taskdetails_content .taskdetails_description {
-  display: flex;
-  flex-direction: column;
-  margin-block: 20px;
-}
-.taskdetails-container .taskdetails_content .taskdetails_description h2 {
-  font-weight: 500;
-  margin: 0px 0px 5px 0px;
-}
-.taskdetails-container .taskdetails_content .taskdetails_description p {
-  margin: 0;
-  padding: 0;
-}
-.taskdetails-container .taskdetails_content .taskdetails_buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-.taskdetails-container .taskdetails_content form .delete_button {
-  border: none;
-  background: rgb(205, 35, 52);
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 5px 5px 5px 5px;
-  border-radius: 5px;
-  margin-top: 10px;
-  text-decoration: none;
-}
-.taskdetails-container .taskdetails_content form .delete_button:hover {
-  background: rgb(175, 31, 46);
-  cursor: pointer;
-}
-.taskdetails-container .taskdetails_content form .delete_button:focus {
-  background-color: rgb(152, 27, 40);
-}
-.taskdetails-container .taskdetails_content h3 {
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-.taskdetails-container .taskdetails_content h3 span {
-  font-weight: 600;
-}
-.taskdetails-container .taskdetails_content .edit_button {
-  border: none;
-  background: #244180;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 5px 5px 5px 5px;
-  border-radius: 5px;
-  margin-top: 10px;
-  text-decoration: none;
-}
-.taskdetails-container .taskdetails_content .edit_button:hover {
-  background: #1c3467;
-  cursor: pointer;
-}
-.taskdetails-container .taskdetails_content .edit_button:focus {
-  background-color: #172c57;
-}
-
 body {
   padding: 0;
   margin: 0;
@@ -326,6 +327,23 @@ h1 {
 }
 
 @media only screen and (width < 450px) {
+  .bottom_button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #273049;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  .bottom_button:hover {
+    background-color: #22283d;
+  }
   .tasks-container {
     display: flex;
     justify-content: center;
