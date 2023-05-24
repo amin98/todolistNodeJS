@@ -30,34 +30,13 @@
             </ul>
         </div>
     </nav>
-    <div class="taskdetails-container">
-        <div class="taskdetails_content">
-            <h1>
-                <%= task.name %>
-            </h1>
-            <hr>
-            <div class="taskdetails_description">
-                <h2>Descsription</h2>
-                <p>
-                    <%= task.description %>
-                </p>
-            </div>
-            <h3>Priority: <span>
-                    <%= task.priority %>
-                </span></h3>
-            <h3>Deadline Date: <span>
-                    <%= task.duedate.toLocaleDateString('nl-NL') %>
-                </span> </h3>
-            <div class="taskdetails_buttons">
-                <a href="/tasks/edit/<%= task.id %>" class="edit_button">Edit</a>
+    <div class="newtask-container">
+        <h1>Edit Task</h1>
+        <hr>
+        <form action="/tasks/<%= task.id  %>?_method=PUT" method="post" class="newtask_form_container">
+            <%- include('_form_fields') %>
 
-                <form action="/tasks/<%= task.id  %>?_method=DELETE" method="post">
-                    <button type="submit" class="delete_button">
-                        Delete
-                    </button>
-                </form>
-            </div>
-        </div>
+        </form>
     </div>
 </body>
 

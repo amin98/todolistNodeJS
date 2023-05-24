@@ -424,6 +424,7 @@ h1 {
     font-size: 18px;
     color: #0d1018;
     margin: 0;
+    width: 100%;
   }
   .tasks-container .task_content p {
     overflow: hidden;

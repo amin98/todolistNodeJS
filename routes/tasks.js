@@ -7,6 +7,11 @@ router.get('/new', (req, res) => {
   res.render('tasks/new', { task: new Task() });
 });
 
+router.get('/edit/:id', async (req, res) => {
+  const task = await Task.findById(req.params.id)
+  res.render('tasks/edit', { task: task });
+});
+
 router.get('/:slug', async (req, res) => {
   // res.send(req.params.id);
   const task = await Task.findOne({slug: req.params.slug});
