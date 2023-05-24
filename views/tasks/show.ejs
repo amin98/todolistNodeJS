@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <title>To Do List</title>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="navbar-header-container">
-            <a class="navbar-header" href="index.html">
+            <a class="navbar-header" href="/">
                 Task List
             </a>
         </div>
         <a href="#" class="toggle-button">
-            <img src="img/menu.png" alt="Menu">
+            <img src="/img/menu.png" alt="Menu">
         </a>
         <div id="navbar-links">
             <ul>
@@ -32,18 +32,24 @@
     </nav>
     <div class="taskdetails-container">
         <div class="taskdetails_content">
-            <h1>Task Name</h1>
+            <h1>
+                <%= task.name %>
+            </h1>
             <hr>
             <div class="taskdetails_description">
                 <h2>Descsription</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga minus ipsa consequuntur fugiat ad quas
-                    consectetur dolore, cumque maxime explicabo, atque laboriosam nobis repellendus ut quae adipisci?
-                    Earum, porro ut?</p>
+                <p>
+                    <%= task.description %>
+                </p>
             </div>
-            <h3>Priority: <span>1</span></h3>
-            <h3>Deadline Date: <span>20-02-2023</span> </h3>
+            <h3>Priority: <span>
+                    <%= task.priority %>
+                </span></h3>
+            <h3>Deadline Date: <span>
+                    <%= task.duedate.toLocaleDateString('nl-NL') %>
+                </span> </h3>
             <div class="taskdetails_buttons">
-                <a href="tasks/edit/" class="edit_button">Edit</a>
+                <a href="tasks/edit/<%= task.id %>" class="edit_button">Edit</a>
 
                 <form action="/tasks/<%=  %>?_method=DELETE" method="post">
                     <button type="submit" class="delete_button">
@@ -56,6 +62,7 @@
     </div>
 </body>
 
+
 </html>
-<script src="script.js"></script>
-<script src="navigation.js"></script>
+<script src="/script.js"></script>
+<script src="/navigation.js"></script>
