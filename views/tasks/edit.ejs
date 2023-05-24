@@ -11,36 +11,18 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-header-container">
-            <a class="navbar-header" href="/">
-                Task List
-            </a>
-        </div>
-        <a href="#" class="toggle-button">
-            <img src="/img/menu.png" alt="Menu">
-        </a>
-        <div id="navbar-links">
-            <ul>
-                <li>
-                    <a id="index-button" class="nav-text">Home</a>
-                </li>
-                <li>
-                    <a id="about-button" class="nav-text">About</a>
-                </ul>
-        </div>
-    </nav>
-    <div class="newtask-container">
-        <h1>Edit Task</h1>
-        <hr>
-        <form action="/tasks/<%= task.id  %>?_method=PUT" method="post" class="newtask_form_container">
-            <%- include('_form_fields') %>
+    <%- include('_navigation') %>
 
-        </form>
-    </div>
+        <div class="newtask-container">
+            <h1>Edit Task</h1>
+            <hr>
+            <form action="/tasks/<%= task.id  %>?_method=PUT" method="post" class="newtask_form_container">
+                <%- include('_form_fields') %>
+
+            </form>
+        </div>
 </body>
 
 
 </html>
-<script src="/script.js"></script>
-<script src="/navigation.js"></script>
+<%- include('_scripts') %>

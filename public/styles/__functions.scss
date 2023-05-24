@@ -39,6 +39,7 @@
     border-radius: 5px;
     margin-top: 10px;
     text-decoration: none;
+    box-sizing: border-box;
     &:hover {
       background: $hoverDarkBlue;
       cursor: pointer;
@@ -48,6 +49,7 @@
     }
   }
 }
+
 @mixin editButton() {
   .edit_button {
     border: none;

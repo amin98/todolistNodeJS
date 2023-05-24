@@ -11,25 +11,8 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-header-container">
-            <a class="navbar-header" href="/">
-                Task List
-            </a>
-        </div>
-        <a href="#" class="toggle-button">
-            <img src="/img/menu.png" alt="Menu">
-        </a>
-        <div id="navbar-links">
-            <ul>
-                <li>
-                    <a id="index-button" class="nav-text">Home</a>
-                </li>
-                <li>
-                    <a id="about-button" class="nav-text">About</a>
-            </ul>
-        </div>
-    </nav>
+    <%- include('_navigation') %>
+
     <div class="taskdetails-container">
         <div class="taskdetails_content">
             <h1>
@@ -63,5 +46,4 @@
 
 
 </html>
-<script src="/script.js"></script>
-<script src="/navigation.js"></script>
+<%- include('_scripts') %>
