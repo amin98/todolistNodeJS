@@ -7,9 +7,9 @@ router.get('/new', (req, res) => {
   res.render('tasks/new', { task: new Task() });
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:slug', async (req, res) => {
   // res.send(req.params.id);
-  const task = await Task.findById(req.params.id);
+  const task = await Task.findOne({slug: req.params.slug});
   
   if (task == null) res.redirect('/') 
   res.render('tasks/show', { task: task });
@@ -26,11 +26,16 @@ router.post('/', async (req, res) => {
   });
   try {
     task = await task.save();
-    res.redirect(`/tasks/${task.id}`);
+    res.redirect(`/tasks/${task.slug}`);
   } catch (e) {
     console.log(e);
     res.render('tasks/new', { task: task });
   }
 });
+
+router.delete("/:id", async (req, res)=>{
+  await Task.findByIdAndDelete(req.params.id)
+  res.redirect('/')
+})
 
 module.exports = router;

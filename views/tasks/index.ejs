@@ -36,15 +36,17 @@
 
             <% tasks.forEach(task=>{ %>
                 <div class="task">
-                    <a href="" class="task_content">
+                    <a href="tasks/<%= task.slug  %>" class="task_content">
                         <p class="task_content_paragraph">
                             <%= task.name %>
                         </p>
                     </a>
-                    <label class="container">&nbsp;
-                        <input class="checkbox" type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
+                    <form action="/tasks/<%= task.id  %>?_method=DELETE" method="post">
+                        <label class="container">&nbsp;
+                            <input onChange="this.form.submit()" class="checkbox" type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </form>
                 </div>
 
                 <% }) %>
