@@ -1,19 +1,6 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
-// const marked = require('marked');
-// const { gfmHeadingId } = require('marked-gfm-heading-id');
-// const { mangle } = require('marked-mangle');
-// const slugify = require('slugify');
-// const createDomPurify = require('dompurify');
-// const { JSDOM } = require('jsdom');
-// const dompurify = createDomPurify(new JSDOM().window);
-
-// const options = {
-//   prefix: 'my-prefix-',
-// };
-
-// marked.use(gfmHeadingId(options));
-// marked.use(mangle());
 
 const taskSchema = new mongoose.Schema({
   name: {
@@ -23,24 +10,31 @@ const taskSchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  // priority: {
-  //   type: Number,
-  //   required: true,
-  // },
-  dueDate: {
+  priority: {
+    type: Number,
+    required: true,
+  },
+  duedate: {
     type: Date,
     required: true,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  slug: {
+    type: String,
+    required: true,
+    unique: true,
+  },
 });
 
-// taskSchema.plugin(autoIncrement.plugin, 'Task');
+taskSchema.pre('validate', function (next) {
+  if (this.name) {
+    this.slug = slugify(this.title, { lower: true, strict: true });
+  }
 
-// taskSchema.pre('validate', function (next) {
-//   if (this.name) {
-//     this.slug = slugify(this.name, { lower: true, strict: true });
-//   }
-
-//   next();
-// });
+  next();
+});
 
 module.exports = mongoose.model('Task', taskSchema);
