@@ -1,4 +1,4 @@
-@media only screen and (width >= 450px) and (width < 900px) {
+@media only screen and (width >= 900px) {
   .bottom_button {
     position: sticky;
     bottom: 0;
@@ -16,9 +16,51 @@
       background-color: $hoverDarkBlue;
     }
   }
+  .newtask_form_container {
+    margin-inline: 20px;
+    margin-block: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    @include primaryButton();
+  }
+  .newtask_field {
+    display: flex;
+    max-width: 500px;
+    flex-direction: column;
+    label {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+    input[type='text'] {
+      border: 1px solid black;
+      font-size: 1.3rem;
+      border-radius: 5px;
+      padding-block: 5px;
+      box-sizing: border-box;
 
+      &:focus {
+        outline: none;
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      box-sizing: border-box;
+      border: 1px solid black;
+      font-size: 1.3rem;
+      border-radius: 5px;
+      padding-block: 5px;
+      resize: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
   .tasks-container {
-    @include flexColumnTopCenter(column);
+    @include flexTopCenter(column);
     margin-inline: 15px;
     margin-bottom: 25px;
     gap: 25px;
@@ -48,13 +90,16 @@
       box-sizing: border-box;
       border-radius: 5px;
       background-color: $white;
+      max-width: 1000px;
       box-shadow: rgba(126, 130, 135, 0.2) 1px 5px 5px;
       @include flexCenterBetween();
       padding: 10px;
       .priority_level_text {
-        display: flex;
-        gap: 20px;
+        span {
+          font-weight: bold;
+        }
       }
+
       .container {
         display: block;
         position: relative;

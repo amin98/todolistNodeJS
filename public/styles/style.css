@@ -168,64 +168,65 @@
   border-radius: 100%;
   border-color: #273049;
 }
-@media only screen and (width < 450px) {
-  .newtask-container .newtask_form_container {
-    margin-inline: 20px;
-    margin-block: 10px;
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .newtask-container .newtask_form_container .primary_button {
-    border: none;
-    background: #273049;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px;
-    margin-top: 10px;
-    text-decoration: none;
-    box-sizing: border-box;
-  }
-  .newtask-container .newtask_form_container .primary_button:hover {
-    background: #22283d;
-    cursor: pointer;
-  }
-  .newtask-container .newtask_form_container .primary_button:focus {
-    background-color: #131726;
-  }
-  .newtask-container .newtask_field {
-    display: flex;
-    flex-direction: column;
-  }
-  .newtask-container .newtask_field label {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-  }
-  .newtask-container .newtask_field input[type=text] {
-    border: 1px solid black;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    padding-block: 5px;
-    box-sizing: border-box;
-  }
-  .newtask-container .newtask_field input[type=text]:focus {
-    outline: none;
-  }
-  .newtask-container .newtask_field textarea {
-    width: 100%;
-    height: 150px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    padding-block: 5px;
-    resize: none;
-  }
-  .newtask-container .newtask_field textarea:focus {
-    outline: none;
-  }
+.newtask-container .newtask_form_container {
+  margin-inline: 20px;
+  margin-block: 10px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  max-width: 700px;
+  gap: 20px;
+}
+.newtask-container .newtask_form_container .primary_button {
+  border: none;
+  background: #273049;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-decoration: none;
+  box-sizing: border-box;
+  max-width: 500px;
+}
+.newtask-container .newtask_form_container .primary_button:hover {
+  background: #22283d;
+  cursor: pointer;
+}
+.newtask-container .newtask_form_container .primary_button:focus {
+  background-color: #131726;
+}
+.newtask-container .newtask_field {
+  display: flex;
+  max-width: 500px;
+  flex-direction: column;
+}
+.newtask-container .newtask_field label {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+.newtask-container .newtask_field input[type=text] {
+  border: 1px solid black;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  padding-block: 5px;
+  box-sizing: border-box;
+}
+.newtask-container .newtask_field input[type=text]:focus {
+  outline: none;
+}
+.newtask-container .newtask_field textarea {
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  padding-block: 5px;
+  resize: none;
+}
+.newtask-container .newtask_field textarea:focus {
+  outline: none;
 }
 
 @media only screen and (width < 900px) {
@@ -497,6 +498,204 @@
     /* Create the checkmark/indicator (hidden when not checked) */
     /* Show the checkmark when checked */
     /* Style the checkmark/indicator */
+  }
+  .tasks-container .task .priority_level_text {
+    display: flex;
+    gap: 20px;
+  }
+  .tasks-container .task .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  .tasks-container .task .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .tasks-container .task .checkmark {
+    position: absolute;
+    top: -3px;
+    left: -20px;
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-color: #eee;
+    border: 1px solid rgba(95, 95, 95, 0.148);
+  }
+  .tasks-container .task .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  .tasks-container .task .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .tasks-container .task .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  .tasks-container .task .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #66bb6a;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  .tasks-container .task_content {
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+    color: #0d1018;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .tasks-container .task_content p {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}
+@media only screen and (width >= 900px) {
+  .bottom_button {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    background-color: #273049;
+    height: 70px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  .bottom_button:hover {
+    background-color: #22283d;
+  }
+  .newtask_form_container {
+    margin-inline: 20px;
+    margin-block: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .newtask_form_container .primary_button {
+    border: none;
+    background: #273049;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    box-sizing: border-box;
+    max-width: 500px;
+  }
+  .newtask_form_container .primary_button:hover {
+    background: #22283d;
+    cursor: pointer;
+  }
+  .newtask_form_container .primary_button:focus {
+    background-color: #131726;
+  }
+  .newtask_field {
+    display: flex;
+    max-width: 500px;
+    flex-direction: column;
+  }
+  .newtask_field label {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  .newtask_field input[type=text] {
+    border: 1px solid black;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    padding-block: 5px;
+    box-sizing: border-box;
+  }
+  .newtask_field input[type=text]:focus {
+    outline: none;
+  }
+  .newtask_field textarea {
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    padding-block: 5px;
+    resize: none;
+  }
+  .newtask_field textarea:focus {
+    outline: none;
+  }
+  .tasks-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: 15px;
+    margin-bottom: 25px;
+    gap: 25px;
+  }
+  .tasks-container .header_text {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .tasks-container .header_text .add_task_button {
+    border: none;
+    background: #273049;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  .tasks-container .header_text .add_task_button:hover {
+    background: #22283d;
+    cursor: pointer;
+  }
+  .tasks-container .header_text .add_task_button:focus {
+    background-color: #131726;
+  }
+  .tasks-container .task {
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #fff;
+    max-width: 1000px;
+    box-shadow: rgba(126, 130, 135, 0.2) 1px 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    /* Hide the browser's default checkbox */
+    /* Create a custom checkbox */
+    /* On mouse-over, add a grey background color */
+    /* When the checkbox is checked, add a blue background */
+    /* Create the checkmark/indicator (hidden when not checked) */
+    /* Show the checkmark when checked */
+    /* Style the checkmark/indicator */
+  }
+  .tasks-container .task .priority_level_text span {
+    font-weight: bold;
   }
   .tasks-container .task .container {
     display: block;

@@ -40,6 +40,8 @@
     margin-top: 10px;
     text-decoration: none;
     box-sizing: border-box;
+    max-width: 500px;
+
     &:hover {
       background: $hoverDarkBlue;
       cursor: pointer;
