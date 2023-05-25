@@ -59,33 +59,34 @@
       }
     }
   }
+  .header_text {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    .add_task_button {
+      border: none;
+      background: $darkBlue;
+      color: $white;
+      font-size: 1.2rem;
+      padding: 5px 5px 5px 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      box-sizing: border-box;
+      &:hover {
+        background: $hoverDarkBlue;
+        cursor: pointer;
+      }
+      &:focus {
+        background-color: $focusDarkBlue;
+      }
+    }
+  }
   .tasks-container {
-    @include flexTopCenter(column);
+    @include flexColumnCenter(column);
     margin-inline: 15px;
     margin-bottom: 25px;
     gap: 25px;
-    .header_text {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      .add_task_button {
-        border: none;
-        background: $darkBlue;
-        color: $white;
-        font-size: 1.2rem;
-        padding: 5px 5px 5px 5px;
-        border-radius: 5px;
-        text-decoration: none;
-        box-sizing: border-box;
-        &:hover {
-          background: $hoverDarkBlue;
-          cursor: pointer;
-        }
-        &:focus {
-          background-color: $focusDarkBlue;
-        }
-      }
-    }
+
     .task {
       box-sizing: border-box;
       border-radius: 5px;
@@ -94,6 +95,8 @@
       box-shadow: rgba(126, 130, 135, 0.2) 1px 5px 5px;
       @include flexCenterBetween();
       padding: 10px;
+      width: 100%;
+
       .priority_level_text {
         span {
           font-weight: bold;
@@ -188,6 +191,60 @@
         line-clamp: 1;
         -webkit-box-orient: vertical;
       }
+    }
+  }
+  .taskdetails-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 300px 20px 300px;
+    // max-width: 700px;
+    h1 {
+      margin-top: 0;
+      font-weight: 500;
+    }
+    hr {
+      margin-inline: 10px;
+      border-radius: 100%;
+      border-color: $darkBlue;
+    }
+    .taskdetails_content {
+      background-color: $white;
+      border-radius: 5px;
+      padding: 10px 10px 20px 10px;
+      box-shadow: 1px 1px 5px $shadowColor;
+      width: 100%;
+
+      .taskdetails_description {
+        display: flex;
+        flex-direction: column;
+        margin-block: 20px;
+        h2 {
+          font-weight: 500;
+          margin: 0px 0px 5px 0px;
+        }
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .taskdetails_buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+      form {
+        @include deleteButton();
+      }
+      h3 {
+        font-weight: 400;
+        margin-bottom: 20px;
+        span {
+          font-weight: 600;
+        }
+      }
+      @include editButton();
     }
   }
 }

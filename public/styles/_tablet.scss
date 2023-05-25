@@ -16,34 +16,34 @@
       background-color: $hoverDarkBlue;
     }
   }
-
+  .header_text {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    .add_task_button {
+      border: none;
+      background: $darkBlue;
+      color: $white;
+      font-size: 1.2rem;
+      padding: 5px 5px 5px 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      box-sizing: border-box;
+      &:hover {
+        background: $hoverDarkBlue;
+        cursor: pointer;
+      }
+      &:focus {
+        background-color: $focusDarkBlue;
+      }
+    }
+  }
   .tasks-container {
     @include flexColumnTopCenter(column);
     margin-inline: 15px;
     margin-bottom: 25px;
     gap: 25px;
-    .header_text {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      .add_task_button {
-        border: none;
-        background: $darkBlue;
-        color: $white;
-        font-size: 1.2rem;
-        padding: 5px 5px 5px 5px;
-        border-radius: 5px;
-        text-decoration: none;
-        box-sizing: border-box;
-        &:hover {
-          background: $hoverDarkBlue;
-          cursor: pointer;
-        }
-        &:focus {
-          background-color: $focusDarkBlue;
-        }
-      }
-    }
+
     .task {
       box-sizing: border-box;
       border-radius: 5px;

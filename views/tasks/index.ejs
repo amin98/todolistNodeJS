@@ -14,12 +14,13 @@
     <%- include('_navigation') %>
 
         <div class="main-container">
+            <div class="header_text">
+                <h1>Your Tasks</h1>
+                <a href="tasks/new" class="add_task_button">+ Add Task</a>
+            </div>
             <div class="tasks-container">
 
-                <div class="header_text">
-                    <h1>Your Tasks</h1>
-                    <a href="tasks/new" class="add_task_button">+ Add Task</a>
-                </div>
+
 
                 <% tasks.forEach(task=>{ %>
                     <div class="task">
@@ -28,7 +29,6 @@
                                 <%= task.name %>
                             </p>
                             <p class="priority_level_text">
-                                <span>Due Date:</span>
                                 <%= task.duedate.toLocaleDateString('nl-NL') %>
                             </p>
                         </a>
@@ -40,8 +40,8 @@
                             </label>
                         </form>
                     </div>
-
                     <% }) %>
+
             </div>
         </div>
         <a href="tasks/new" class="bottom_button">+ Add Task</a>

@@ -1,6 +1,6 @@
 @media only screen and (width < 900px) {
   .taskdetails-container {
-    @include flexTopCenter(column);
+    @include flexCenter();
     margin: 10px;
     h1 {
       margin-top: 0;
@@ -16,6 +16,7 @@
       border-radius: 5px;
       padding: 10px 10px 20px 10px;
       box-shadow: 1px 1px 5px $shadowColor;
+      width: 100%;
       .taskdetails_description {
         display: flex;
         flex-direction: column;
